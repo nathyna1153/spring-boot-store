@@ -52,7 +52,7 @@ public class VideoJuegoController {
 				return new ResponseEntity<Map<String, Object>>(response, HttpStatus.NOT_FOUND);
 			}
 			response.put("mensaje", "Actualmente la base de datos cuenta con: " + videoJuegos.size() + " registros");
-			response.put("video juegos", videoJuegos);
+			response.put("videojuego", videoJuegos);
 			return new ResponseEntity<Map<String, Object>>(response, HttpStatus.OK);
 		}
 		
