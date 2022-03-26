@@ -1,5 +1,6 @@
 package cl.nttlab.store.dao;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -13,7 +14,9 @@ public interface IVideoJuegoDAO extends JpaRepository<VideoJuego, Long>{
 	
 	VideoJuego findByNombre(String nombre);
 	
-	VideoJuego findByCategoria(Categoria categoria);
+	List<VideoJuego> findByNombreContaining(String nombre);
+	
+	List<VideoJuego> findByCategoria(Categoria categoria);
 	
 	Optional<VideoJuego> findById(Long id);
 	

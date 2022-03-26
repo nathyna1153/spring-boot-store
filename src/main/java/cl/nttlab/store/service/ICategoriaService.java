@@ -8,4 +8,6 @@ public interface ICategoriaService {
 
 	List<Categoria> obtenerTodasCategorias();
 
+	Categoria findById(Long id);
+
 }

@@ -16,5 +16,9 @@ public interface IVideoJuegoService {
 
 	VideoJuego findById(Long id);
 	
-	void eliminar(Long id);	
+	void eliminar(Long id);
+
+	List<VideoJuego> findByNombre(String nombre);
+
+	List<VideoJuego> findByIdCargoria(Long idCategoria);	
 }

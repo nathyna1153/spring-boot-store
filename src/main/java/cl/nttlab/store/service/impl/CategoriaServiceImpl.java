@@ -1,6 +1,7 @@
 package cl.nttlab.store.service.impl;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -19,5 +20,14 @@ public class CategoriaServiceImpl implements ICategoriaService{
 	@Override
 	public List<Categoria> obtenerTodasCategorias() {
 		return categoriaDao.findAll();
+	}
+
+	@Override
+	public Categoria findById(Long id) {
+		Optional<Categoria> categoria = categoriaDao.findById(id);
+		if(categoria.isEmpty()) {
+			return null;
+		}
+		return categoria.get();
 	}
 }
