@@ -52,7 +52,7 @@ public class VideoJuegoController {
 				return new ResponseEntity<Map<String, Object>>(response, HttpStatus.NOT_FOUND);
 			}
 			response.put("mensaje", "Actualmente la base de datos cuenta con: " + videoJuegos.size() + " registros");
-			response.put("videojuego", videoJuegos);
+			response.put("videojuegos", videoJuegos);
 			return new ResponseEntity<Map<String, Object>>(response, HttpStatus.OK);
 		}
 		
@@ -92,7 +92,9 @@ public class VideoJuegoController {
 				response.put("mensaje", "El video juego con nombre: " + nombre + " no existe en nuestros registros.");
 				return new ResponseEntity<Map<String, Object>>(response, HttpStatus.NOT_FOUND);
 			}
-			return new ResponseEntity<List<VideoJuego>>(videoJuegoList, HttpStatus.OK);
+			response.put("mensaje", "Actualmente la base de datos cuenta con: " + videoJuegoList.size() + " registros");
+			response.put("videojuegos", videoJuegoList);
+			return new ResponseEntity<Map<String, Object>>(response, HttpStatus.OK);
 		}
 		
 		/*mostrar un juego por id categoria*/
@@ -111,7 +113,9 @@ public class VideoJuegoController {
 				response.put("mensaje", "No existen videojuegos con la cargoria ID: " + idCategoria + ".");
 				return new ResponseEntity<Map<String, Object>>(response, HttpStatus.NOT_FOUND);
 			}
-			return new ResponseEntity<List<VideoJuego>>(videoJuegoList, HttpStatus.OK);
+			response.put("mensaje", "Actualmente la base de datos cuenta con: " + videoJuegoList.size() + " registros");
+			response.put("videojuegos", videoJuegoList);
+			return new ResponseEntity<Map<String, Object>>(response, HttpStatus.OK);
 		}
 		
 		/* Crea un nuevo juego, metodo Post*/
@@ -138,7 +142,7 @@ public class VideoJuegoController {
 				return new ResponseEntity<Map<String, Object>>(response, HttpStatus.INTERNAL_SERVER_ERROR);
 			}
 			response.put("mensaje", "El nuevo juego se ha creado con exito.");
-			response.put("video juego",  nuevoVideoJuego);
+			response.put("videojuego",  nuevoVideoJuego);
 			return new ResponseEntity<Map<String, Object>>(response, HttpStatus.CREATED);
 		}
 		
